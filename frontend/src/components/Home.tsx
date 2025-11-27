@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Music, Waves, Zap } from "lucide-react";
 
-export default function Home() {
+interface HomePageProps {
+  onNavigate: (page: string) => void;
+}
+
+export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -19,19 +22,23 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Link to="/editor">
-              <Button size="lg" className="gap-2">
-                <Zap className="w-5 h-5" />
-                Start Creating
-              </Button>
-            </Link>
-
-            <Link to="/library">
-              <Button size="lg" variant="outline" className="gap-2">
-                <Waves className="w-5 h-5" />
-                View Library
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              onClick={() => onNavigate("editor")}
+              className="gap-2"
+            >
+              <Zap className="w-5 h-5" />
+              Start Creating
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => onNavigate("library")}
+              className="gap-2"
+            >
+              <Waves className="w-5 h-5" />
+              View Library
+            </Button>
           </div>
         </div>
       </div>
