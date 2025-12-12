@@ -195,9 +195,6 @@ rsa==4.9
 s3transfer==0.11.5
 SciPy==1.11.3
 scour==0.38.2
-selinux @ file:///builddir/build/BUILD/libselinux-3.7/src
-Send2Trash==1.8.2
-sepolicy @ file:///builddir/build/BUILD/selinux-3.7/python/sepolicy
 setools==4.5.1
 setuptools==69.0.3
 simpleaudio==1.0.4
