@@ -6,4 +6,4 @@ gunicorn==23.0.0
 dj-database-url==3.0.1
 psycopg2-binary==2.9.11
 whitenoise==6.11.0
-pydub>=0.26.0
+pydub==0.25.1
