@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-const API_URL = "http://127.0.0.1:8000/api/";
+const API_URL = "https://slowed-reverb-website.onrender.com/api/";
 
 type User = { id: number; name: string; email: string; role: string } | null;
 
