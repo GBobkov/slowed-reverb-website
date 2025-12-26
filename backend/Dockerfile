@@ -14,5 +14,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 ENV PYTHONUNBUFFERED=1
-
-CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:10000"]
+RUN chmod +x /app/entrypoint.sh
+CMD ["/app/entrypoint.sh"]
