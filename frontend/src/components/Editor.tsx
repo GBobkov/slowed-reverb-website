@@ -19,7 +19,7 @@ export function EditorPage({ onNavigate }: { onNavigate: (page: string) => void 
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const API_URL = "https://slowed-reverb-website.onrender.com/api/";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleDragOver = (e: React.DragEvent) => { e.preventDefault(); setIsDragging(true); };
   const handleDragLeave = () => setIsDragging(false);

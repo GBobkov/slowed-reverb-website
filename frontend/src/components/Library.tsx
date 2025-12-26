@@ -25,7 +25,7 @@ export function LibraryPage({ onNavigate }: { onNavigate: (page: string) => void
   const [deleteModalTrack, setDeleteModalTrack] = useState<Track | null>(null);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const API_URL = "https://slowed-reverb-website.onrender.com/api/";
+  const API_URL = import.meta.env.VITE_API_URL;
 
 
   useEffect(() => {

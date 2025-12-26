@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-const API_URL = "https://slowed-reverb-website.onrender.com/api/";
+const API_URL = import.meta.env.VITE_API_URL;
 
 type User = { id: number; name: string; email: string; role: string } | null;
 
