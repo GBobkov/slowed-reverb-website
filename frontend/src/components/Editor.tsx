@@ -87,7 +87,6 @@ export function EditorPage({ onNavigate }: { onNavigate: (page: string) => void 
       const res = await fetch(API_URL + "tracks/process/", {
         method: "POST",
         headers: { Authorization: `Bearer ${accessToken}` },
-        credentials: "include",
         body: fd,
       });
 
@@ -113,7 +112,6 @@ export function EditorPage({ onNavigate }: { onNavigate: (page: string) => void 
       const res = await fetch(API_URL + `tracks/${id}/download/`, {
         method: "GET",
         headers: { Authorization: `Bearer ${accessToken}` },
-        credentials: "include",
       });
       if (!res.ok) throw new Error("Failed to fetch processed audio");
 
@@ -142,7 +140,6 @@ export function EditorPage({ onNavigate }: { onNavigate: (page: string) => void 
         const res = await fetch(API_URL + `tracks/${processedTrack.id}/download/`, {
           method: "GET",
           headers: { Authorization: `Bearer ${accessToken}` },
-          credentials: "include",
         });
         if (!res.ok) throw new Error("Download failed");
 
