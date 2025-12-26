@@ -11,4 +11,4 @@ class ProcessedTrackSerializer(serializers.ModelSerializer):
 
     def get_download_url(self, obj):
         request = self.context.get("request")
-        return f"/api/tracks/{obj.id}/download/"
+        return request.build_absolute_url(f"/api/tracks/{obj.id}/download/")
