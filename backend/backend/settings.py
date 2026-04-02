@@ -15,9 +15,8 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-hgn^6chms*lma)99%n&kx-6o-tmd1=x+ei3n&fm1tnd^)@lg3^'
-
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
+SECRET_KEY = os.getenv("SECRET_KEY", "123")
 ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
