@@ -3,6 +3,7 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Play, Pause, Download, Trash, Music, X } from "lucide-react";
 import { useAuth } from "../AuthContext";
+import { API_URL } from "../AuthContext";
 
 interface Track {
   id: number;
@@ -25,7 +26,6 @@ export function LibraryPage({ onNavigate }: { onNavigate: (page: string) => void
   const [deleteModalTrack, setDeleteModalTrack] = useState<Track | null>(null);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const API_URL = "http://127.0.0.1:8000/api/";
 
 
   useEffect(() => {

@@ -4,6 +4,7 @@ import { Slider } from "./ui/slider";
 import { Card } from "./ui/card";
 import { Upload, Play, Pause, Download, Zap, X } from "lucide-react";
 import { useAuth } from "../AuthContext";
+import { API_URL } from "../AuthContext";
 
 export function EditorPage({ onNavigate }: { onNavigate: (page: string) => void }) {
   const { user, accessToken, loading } = useAuth();
@@ -19,7 +20,6 @@ export function EditorPage({ onNavigate }: { onNavigate: (page: string) => void 
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const API_URL = "http://127.0.0.1:8000/api/";
 
   const handleDragOver = (e: React.DragEvent) => { e.preventDefault(); setIsDragging(true); };
   const handleDragLeave = () => setIsDragging(false);
