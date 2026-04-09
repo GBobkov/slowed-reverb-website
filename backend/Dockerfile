@@ -1,13 +1,8 @@
 FROM python:3.11-alpine
 
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
-
 WORKDIR /app
 
 RUN apk add --no-cache \
-    gcc \
     musl-dev \
     postgresql-dev \
     ffmpeg \
@@ -18,9 +13,12 @@ RUN apk add --no-cache \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-
 RUN mkdir -p /app/media
+
+ARG FRONTEND_URL=http://localhost:3000
+ENV FRONTEND_URL=$FRONTEND_URL
+
+COPY . .
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

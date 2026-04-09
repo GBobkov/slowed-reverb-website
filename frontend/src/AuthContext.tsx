@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-export const API_URL = "http://localhost:8000/api/";
+export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api/";
 
 type User = { id: number; name: string; email: string; role: string } | null;
 
